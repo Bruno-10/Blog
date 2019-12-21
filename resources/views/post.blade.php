@@ -14,11 +14,13 @@ Post
   <div class="row">  
     @foreach($posts as $post)
     @section("editar")
+    @if(Auth::check())
     @if(!Helper::noEsAdmin())
       <li class="nav-item">
       <a class="nav-link color_menu" href="/editar/{{$post->id}}">Editar Post</a>
       </li>
     
+    @endif
     @endif
     @endsection
       <!-- Post Content Column -->
@@ -46,6 +48,7 @@ Post
 
         <hr>
         <!-- Comments Form -->
+        @if(Auth::check())
         <div class="card my-4">
           <h5 class="card-header">Hola, {{$post->User->username}} deja tu comentario!</h5>
           <div class="card-body">
@@ -61,6 +64,7 @@ Post
           </div>
         </div>
         <hr>
+        @endif
         <!-- Single Comment -->
         @forelse ($comments as $comment)
         <div class="card my-4">

@@ -22,7 +22,7 @@ Home
                     <div class="card-body">
                     <h2 class="card-title">{{$post->title}}</h2>
                     <p class="card-text">{{$post->shortContent}}</p>
-                    <a href="Post/{{$post->id}}" class="btn btn-primary">Leer Más &rarr;</a>
+                    <a href="/Post/{{$post->id}}" class="btn btn-primary">Leer Más &rarr;</a>
                     </div>
                     <div class="card-footer text-muted">            
                     <p>Posteado el día {{$post->created_at->format("d")}} del {{$post->created_at->format("m")}} de {{$post->created_at->format("Y")}} por <a href="/SobreMi">{{$post->User->username}}</a> </p>
